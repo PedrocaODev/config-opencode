@@ -1,0 +1,16 @@
+# Global OpenCode config — tracked ignore policy
+# ================================================
+
+# Machine-local / secret state
+antigravity-accounts.json
+antigravity-accounts.json.*.tmp
+antigravity-signature-cache.json
+antigravity-logs/
+
+# Runtime directories
+node_modules/
+.opencode/
+.ocx/
+
+# Backups
+*.bak

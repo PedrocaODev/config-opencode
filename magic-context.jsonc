@@ -1,0 +1,12 @@
+{
+  "$schema": "https://raw.githubusercontent.com/cortexkit/magic-context/master/assets/magic-context.schema.json",
+  "historian": {
+    "model": "opencode/mimo-v2.5-pro"
+  },
+  "dreamer": {
+    "model": "opencode-go/minimax-m2.7"
+  },
+  "sidekick": {
+    "model": "opencode-go/minimax-m3"
+  }
+}
