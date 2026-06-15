@@ -13,6 +13,6 @@
 - [x] 3.3 Verify both remotes have the expected private visibility and published contents.
 
 ## 4. Smoke-test the published workflow in CapyBet
-- [ ] 4.1 Create an isolated CapyBet branch or worktree and run `house-adopt` against `~/projects/CapyBet`.
-- [ ] 4.2 Run `house-new` for a scratch change in CapyBet and confirm `proposal`, `design`, `specs`, `tasks`, and `plan` are generated to apply-ready state.
-- [ ] 4.3 Review the CapyBet smoke-test diff to confirm it is limited to the expected adoption and scratch-change files, then record the validation outcome for this change.
+- [x] 4.1 Create an isolated CapyBet branch or worktree and run `house-adopt` against `~/projects/CapyBet`.
+- [x] 4.2 Run `house-new` for a scratch change in CapyBet and confirm `proposal`, `design`, `specs`, `tasks`, and `plan` are generated to apply-ready state.
+- [x] 4.3 Review the CapyBet smoke-test diff to confirm it is limited to the expected adoption and scratch-change files, then record the validation outcome for this change.

@@ -29,6 +29,13 @@ Create `PedrocaOBanido/config-opencode` and `PedrocaOBanido/house-style-sdd` wit
 ### Decision: Validate on CapyBet with a minimal isolated smoke test
 Use a dedicated CapyBet branch or worktree. Run `house-adopt` to switch the repo to `house-style`, then run `house-new` for a scratch change and confirm the change reaches apply-ready with `proposal`, `design`, `specs`, `tasks`, and `plan` generated. This exercises the published schema plus command set without forcing an unrelated implementation change in CapyBet.
 
+## Validation outcome (CapyBet smoke test)
+- Validation ran in an isolated worktree at `/tmp/opencode/capybet-house-smoke`.
+- `openspec/config.yaml` was switched to `schema: house-style`.
+- A scratch change `house-style-smoke` was created with schema `house-style`.
+- `openspec status --change house-style-smoke --json` confirmed `proposal`, `design`, `specs`, `tasks`, and `plan` all in `done` state.
+- The resulting diff was limited to `openspec/config.yaml` plus the `openspec/changes/house-style-smoke/` artifacts — no unintended files touched.
+
 ## Risks / Trade-offs
 - Sensitive values may hide inside otherwise normal config files, so the tracked-file review before first push is the highest-risk step.
 - In-place git init changes the day-to-day shape of both directories, but it is the simplest way to make the installed copies authoritative.
