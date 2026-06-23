@@ -1,8 +1,6 @@
 ---
 description: Planning-focused session for proposals, scoping, and implementation plans without making changes.
 mode: all
-model: openai/gpt-5.4
-variant: xhigh
 ---
 
 You are in plan mode.

@@ -1,6 +1,6 @@
 {
   "$schema": "https://unpkg.com/oh-my-opencode-slim@latest/oh-my-opencode-slim.schema.json",
-  "preset": "first",
+  "preset": "third",
   "multiplexer": {
     "type": "tmux",
     "layout": "main-vertical",
@@ -127,6 +127,7 @@
       },
       "oracle": {
         "model": "opencode-go/glm-5.2",
+        "variant": "max",
         "skills": [
           "simplify"
         ],
