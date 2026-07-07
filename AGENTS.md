@@ -30,6 +30,27 @@ These are the 5 main clauses that should be taken on every session:
 - **MCPs:** keep off the orchestrator unless direct access is clearly cheaper
   than delegating.
 
+## System environment
+
+This environment runs inside **WSL2** (Windows Subsystem for Linux), not native
+Linux. Always account for these specifics when performing filesystem or system
+operations:
+
+- **Distro:** Ubuntu 24.04 LTS (Noble Numbat) on WSL2 kernel
+- **Init:** systemd is enabled (`/etc/wsl.conf` has `systemd=true`)
+- **Home:** `/home/pedro` resolves to `\\wsl.localhost\Ubuntu-24.04\home\pedro`
+  from Windows
+- **Windows drives:** mounted at `/mnt/c`, `/mnt/d`, etc.
+- **Filesystem performance:** cross-filesystem operations (Linux ↔ Windows
+  mounts) are significantly slower than Linux-native. Prefer `~/` or `/tmp/`
+  for active work; only touch `/mnt/c/...` when the task explicitly targets
+  Windows-side files.
+- **Windows interop:** `powershell.exe`, `cmd.exe`, and `wslpath` are
+  available. Use `wslpath` to convert between Linux and Windows paths when
+  needed.
+- **Network:** corporate DNS via `nameserver 10.255.255.254`, search domain
+  `la.corp.samsungelectronics.net`
+
 ## Context discipline
 
 - Start with the directly named file, function, test, or command.
@@ -110,3 +131,47 @@ repo, never to `~/.config/opencode`.
 - Ask one focused question when blocked by ambiguity.
 - State assumptions briefly.
 - Prefer file paths and line references over pasted file contents.
+
+
+<!-- headroom:rtk-instructions -->
+# RTK (Rust Token Killer) - Token-Optimized Commands
+
+When running shell commands, **always prefix with `rtk`**. This reduces context
+usage by 60-90% with zero behavior change. If rtk has no filter for a command,
+it passes through unchanged — so it is always safe to use.
+
+## Key Commands
+```bash
+# Git (59-80% savings)
+rtk git status          rtk git diff            rtk git log
+
+# Files & Search (60-75% savings)
+rtk ls <path>           rtk read <file>         rtk grep <pattern>
+rtk find <pattern>      rtk diff <file>
+
+# Test (90-99% savings) — shows failures only
+rtk pytest tests/       rtk cargo test          rtk test <cmd>
+
+# Build & Lint (80-90% savings) — shows errors only
+rtk tsc                 rtk lint                rtk cargo build
+rtk prettier --check    rtk mypy                rtk ruff check
+
+# Analysis (70-90% savings)
+rtk err <cmd>           rtk log <file>          rtk json <file>
+rtk summary <cmd>       rtk deps                rtk env
+
+# GitHub (26-87% savings)
+rtk gh pr view <n>      rtk gh run list         rtk gh issue list
+
+# Infrastructure (85% savings)
+rtk docker ps           rtk kubectl get         rtk docker logs <c>
+
+# Package managers (70-90% savings)
+rtk pip list            rtk pnpm install        rtk npm run <script>
+```
+
+## Rules
+- In command chains, prefix each segment: `rtk git add . && rtk git commit -m "msg"`
+- For debugging, use raw command without rtk prefix
+- `rtk proxy <cmd>` runs command without filtering but tracks usage
+<!-- /headroom:rtk-instructions -->

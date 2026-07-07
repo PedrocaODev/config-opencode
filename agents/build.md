@@ -1,8 +1,8 @@
 ---
 description: Execution-focused build session for implementing approved plans with small diffs and targeted verification.
 mode: all
-model: opencode-go/mimo-v2.5
-variant: high
+model: openai/gpt-5.4-mini-fast
+variant: medium
 temperature: 0.1
 ---
 

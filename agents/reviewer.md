@@ -1,7 +1,7 @@
 ---
 description: Reviews code by inspecting, analyzing, and reporting findings. Does not modify code or implement fixes.
 mode: subagent
-model: openai/gpt-5.4
+model: openai/gpt-5.5-pro
 variant: xhigh
 permission:
   edit: deny
