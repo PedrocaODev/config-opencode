@@ -4,7 +4,8 @@
   "autoupdate": "notify",
   "plugin": [
     "oh-my-opencode-slim",
-    "@cortexkit/opencode-magic-context@latest"
+    "@cortexkit/opencode-magic-context@latest",
+    "@dietrichgebert/ponytail"
   ],
   "share": "manual",
   "permission": {
@@ -24,11 +25,6 @@
       "command": ["/home/pedro/.local/bin/headroom", "mcp", "serve"],
       "enabled": true
     },
-    "codebase-memory": {
-      "type": "local",
-      "command": ["/home/pedro/.nvm/versions/node/v24.17.0/bin/codebase-memory-mcp"],
-      "enabled": true
-    }
   },
   "provider": {
     "headroom": {

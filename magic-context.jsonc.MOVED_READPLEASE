@@ -1,0 +1,28 @@
+// Magic Context configuration moved.
+//
+// Magic Context now reads its configuration from one shared CortexKit
+// location instead of a per-agent path. The settings that were in this
+// file have been moved to:
+//
+//     /home/pedro/.config/cortexkit/magic-context.jsonc
+//
+// Edit that file to change Magic Context settings. This location is no
+// longer read by Magic Context.
+//
+// To undo, rename this file back to "magic-context.jsonc" (and remove the
+// CortexKit copy above if you want this location to take precedence).
+//
+// Your original settings are preserved below for reference.
+
+{
+  "$schema": "https://raw.githubusercontent.com/cortexkit/magic-context/master/assets/magic-context.schema.json",
+  "historian": {
+    "model": "openai/gpt-5.4-mini"
+  },
+  "dreamer": {
+    "model": "openai/gpt-5.4-mini"
+  },
+  "sidekick": {
+    "model": "openai/gpt-5.4-mini"
+  }
+}
