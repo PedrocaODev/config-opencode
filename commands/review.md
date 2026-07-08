@@ -1,6 +1,6 @@
 ---
 description: Launch a thorough code review of the specified code, changes, or files.
-agent: reviewer
+agent: oracle
 subtask: true
 ---
 
