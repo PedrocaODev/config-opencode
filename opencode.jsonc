@@ -41,7 +41,7 @@
   },
   "agent": {
     "plan": {
-      "model": "openai/gpt-5.5",
+      "model": "openai/gpt-5.6-terra",
       "variant": "xhigh",
       "permission": {
         "edit": "deny",
@@ -50,14 +50,19 @@
       }
     },
     "build": {
-      "model": "openai/gpt-5.4-mini-fast",
-      "variant": "medium",
+      "model": "openai/gpt-5.6-terra",
+      "variant": "low",
       "permission": {
         "subtask": "deny",
         "edit": "allow",
         "task": "deny"
       }
     },
+    "orchestrator": {
+      "permission" : {
+        "edit": "deny"
+      }
+    }
   },
   "lsp": true
 }

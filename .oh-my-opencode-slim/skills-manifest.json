@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-07-09T12:38:35.688Z",
+  "updatedAt": "2026-07-09T18:09:49.875Z",
   "skills": {
     "simplify": {
       "status": "deleted",
@@ -40,7 +40,7 @@
       "sourceHash": "3ee1c08d65a0145547ab54efe72b3277c5ae76c78396ba6f030ebaa2e776944a",
       "lastManagedHash": "3ee1c08d65a0145547ab54efe72b3277c5ae76c78396ba6f030ebaa2e776944a",
       "lastSeenHash": "3ee1c08d65a0145547ab54efe72b3277c5ae76c78396ba6f030ebaa2e776944a",
-      "updatedAt": "2026-07-09T12:38:35.685Z"
+      "updatedAt": "2026-07-09T18:09:49.874Z"
     },
     "oh-my-opencode-slim": {
       "status": "managed",
@@ -48,7 +48,7 @@
       "sourceHash": "756ef3c8ed9309f2b534cc27fadc21d89b3419a7bcf4c8869c31e9ad3a1912ad",
       "lastManagedHash": "756ef3c8ed9309f2b534cc27fadc21d89b3419a7bcf4c8869c31e9ad3a1912ad",
       "lastSeenHash": "756ef3c8ed9309f2b534cc27fadc21d89b3419a7bcf4c8869c31e9ad3a1912ad",
-      "updatedAt": "2026-07-09T12:38:35.686Z"
+      "updatedAt": "2026-07-09T18:09:49.874Z"
     },
     "release-smoke-test": {
       "status": "managed",
@@ -56,7 +56,7 @@
       "sourceHash": "ff5f6a0af911a349d50800b682d50ccfb2c2945a0169192e15d45809afafc7b9",
       "lastManagedHash": "ff5f6a0af911a349d50800b682d50ccfb2c2945a0169192e15d45809afafc7b9",
       "lastSeenHash": "ff5f6a0af911a349d50800b682d50ccfb2c2945a0169192e15d45809afafc7b9",
-      "updatedAt": "2026-07-09T12:38:35.687Z"
+      "updatedAt": "2026-07-09T18:09:49.875Z"
     },
     "worktrees": {
       "status": "managed",
@@ -64,7 +64,7 @@
       "sourceHash": "565f3d29c33fdd7d74a5c7ec4f3107b918281cbf82d20ba103baae056bbc063c",
       "lastManagedHash": "565f3d29c33fdd7d74a5c7ec4f3107b918281cbf82d20ba103baae056bbc063c",
       "lastSeenHash": "565f3d29c33fdd7d74a5c7ec4f3107b918281cbf82d20ba103baae056bbc063c",
-      "updatedAt": "2026-07-09T12:38:35.688Z"
+      "updatedAt": "2026-07-09T18:09:49.875Z"
     }
   }
 }
