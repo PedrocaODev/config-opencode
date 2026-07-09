@@ -12,6 +12,7 @@ Review the specified code across these dimensions:
 - Security vulnerabilities
 - Architecture and design quality — god classes, cohesion, coupling, layering
 - Maintainability and readability
+- Ponytail over-engineering — delete/simplify YAGNI violations, unnecessary abstractions, reinvented stdlib/native features, unneeded dependencies, boilerplate, and dead flexibility
 
 $ARGUMENTS
 
