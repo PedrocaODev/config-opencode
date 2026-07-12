@@ -19,8 +19,8 @@
         "mcps": []
       },
       "oracle": {
-        "model": "openai/gpt-5.6-terra",
-        "variant": "xhigh",
+        "model": "openai/gpt-5.6-sol",
+        "variant": "medium",
         "skills": [
           "simplify",
           "ponytail",
@@ -36,8 +36,8 @@
         ]
       },
       "council": {
-        "model": "openai/gpt-5.6-terra",
-        "variant": "xhigh",
+        "model": "openai/gpt-5.6-sol",
+        "variant": "medium",
         "skills": [],
         "mcps": []
       },
@@ -53,22 +53,22 @@
         ]
       },
       "explorer": {
-        "model": "openai/gpt-5.6-luna",
+        "model": "openai/gpt-5.4-mini",
         "skills": [],
         "mcps": [
           "codebase-memory"
         ]
       },
       "fixer": {
-        "model": "openai/gpt-5.6-terra",
-        "variant": "low",
+        "model": "openai/gpt-5.4-mini",
+        "variant": "high",
         "skills": [
           "ponytail"
         ],
         "mcps": []
       },
       "observer": {
-        "model": "openai/gpt-5.6-luna",
+        "model": "openai/gpt-5.4-mini",
         "skills": [],
         "mcps": []
       }
