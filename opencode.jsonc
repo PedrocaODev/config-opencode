@@ -4,6 +4,7 @@
   "plugin": [
     "oh-my-opencode-slim",
     "@cortexkit/opencode-magic-context@latest",
+    "./opencode-codex-identity-plugin.ts",
     "@dietrichgebert/ponytail"
   ],
   "share": "manual",

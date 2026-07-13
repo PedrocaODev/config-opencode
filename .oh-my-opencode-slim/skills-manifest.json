@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-07-12T17:31:17.150Z",
+  "updatedAt": "2026-07-13T17:27:42.533Z",
   "skills": {
     "simplify": {
       "status": "deleted",
@@ -36,35 +36,37 @@
     },
     "reflect": {
       "status": "managed",
-      "packageVersion": "2.1.1",
+      "packageVersion": "2.2.0",
       "sourceHash": "3ee1c08d65a0145547ab54efe72b3277c5ae76c78396ba6f030ebaa2e776944a",
       "lastManagedHash": "3ee1c08d65a0145547ab54efe72b3277c5ae76c78396ba6f030ebaa2e776944a",
       "lastSeenHash": "3ee1c08d65a0145547ab54efe72b3277c5ae76c78396ba6f030ebaa2e776944a",
-      "updatedAt": "2026-07-12T17:31:17.147Z"
+      "updatedAt": "2026-07-13T17:27:42.531Z"
     },
     "oh-my-opencode-slim": {
-      "status": "managed",
+      "status": "customized",
       "packageVersion": "2.1.1",
       "sourceHash": "0625f93779ce32291cd90e2f78fbb8ccdfc355a2cd526ba1c77704dfc2058871",
       "lastManagedHash": "0625f93779ce32291cd90e2f78fbb8ccdfc355a2cd526ba1c77704dfc2058871",
-      "lastSeenHash": "0625f93779ce32291cd90e2f78fbb8ccdfc355a2cd526ba1c77704dfc2058871",
-      "updatedAt": "2026-07-12T17:31:17.148Z"
+      "lastSeenHash": "7f6fd64a11e0e2c4d6bd740d6710a0b6ad701e724404deeca9a5d03414251661",
+      "updatedAt": "2026-07-13T17:27:42.531Z",
+      "stagedPath": "/home/pedro/.config/opencode/.oh-my-opencode-slim/skill-updates/2.1.1/oh-my-opencode-slim"
     },
     "release-smoke-test": {
-      "status": "managed",
+      "status": "customized",
       "packageVersion": "2.1.1",
       "sourceHash": "6ed8aa6ce4237525d5c66cd6816436f2dd453e0da3eb9e68ce065fb35054c364",
       "lastManagedHash": "6ed8aa6ce4237525d5c66cd6816436f2dd453e0da3eb9e68ce065fb35054c364",
-      "lastSeenHash": "6ed8aa6ce4237525d5c66cd6816436f2dd453e0da3eb9e68ce065fb35054c364",
-      "updatedAt": "2026-07-12T17:31:17.149Z"
+      "lastSeenHash": "3796c401982aab85dea93c8e1e16f503ca7c8bcbc63855a4cad0714d6488d8f2",
+      "updatedAt": "2026-07-13T17:27:42.531Z",
+      "stagedPath": "/home/pedro/.config/opencode/.oh-my-opencode-slim/skill-updates/2.1.1/release-smoke-test"
     },
     "worktrees": {
       "status": "managed",
-      "packageVersion": "2.1.1",
-      "sourceHash": "565f3d29c33fdd7d74a5c7ec4f3107b918281cbf82d20ba103baae056bbc063c",
-      "lastManagedHash": "565f3d29c33fdd7d74a5c7ec4f3107b918281cbf82d20ba103baae056bbc063c",
-      "lastSeenHash": "565f3d29c33fdd7d74a5c7ec4f3107b918281cbf82d20ba103baae056bbc063c",
-      "updatedAt": "2026-07-12T17:31:17.150Z"
+      "packageVersion": "2.2.0",
+      "sourceHash": "bdf7212ba2c5f8512afd5159d0462e05ec670cea676c6932e0a0f3ebb68bb77b",
+      "lastManagedHash": "bdf7212ba2c5f8512afd5159d0462e05ec670cea676c6932e0a0f3ebb68bb77b",
+      "lastSeenHash": "bdf7212ba2c5f8512afd5159d0462e05ec670cea676c6932e0a0f3ebb68bb77b",
+      "updatedAt": "2026-07-13T17:27:42.533Z"
     }
   }
 }
