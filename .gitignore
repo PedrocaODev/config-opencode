@@ -15,3 +15,7 @@ node_modules/
 # Backups
 *.bak
 .gitignore
+
+# oh-my-opencode-slim auto-generated
+.oh-my-opencode-slim/skills-manifest.json
+.oh-my-opencode-slim/skill-updates/
