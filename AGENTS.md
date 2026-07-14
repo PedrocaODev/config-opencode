@@ -88,8 +88,8 @@ verification stay with the orchestrator or appropriate specialist.
   result.
 - Prefer `gh` CLI over a GitHub MCP for PRs, issues, releases, workflow runs,
   and checks.
-- Load `android-cli` only for Android docs, emulator, device, APK, or journey
-  work.
+- Load `android-cli` and `android-command-routing` only for Android docs,
+  emulator/device/APK/app-run, Android Studio, or journey evaluation work.
 - If a skill or MCP is not clearly needed, do not load it.
 
 ## GitHub rule

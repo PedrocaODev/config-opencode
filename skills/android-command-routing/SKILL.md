@@ -31,7 +31,7 @@ device/emulator execution.
 - selecting or targeting a running device
 - installing and launching APKs
 - screenshots, layout inspection, or UI-driven debugging
-- journey execution or other multi-step device workflows
+- agent-led journey evaluation or other multi-step device workflows
 - a Gradle command whose real intent is "get this app running on a device"
 
 Examples:
@@ -76,6 +76,23 @@ Some tasks should combine tools instead of forcing everything through one:
 - Inspect UI with `android ...`, then capture detailed logs with `adb logcat`.
 - Use Gradle for instrumentation setup, but prefer `android` helpers for
   emulator/device orchestration when they remove manual steps.
+
+## Safe workflow
+
+```sh
+android --version
+android info
+adb devices
+./gradlew :app:assembleDebug
+android describe --project_dir=.
+android run --device="$SERIAL" --apks=app/build/outputs/apk/debug/app-debug.apk
+```
+
+- Carry one serial throughout: `android ... --device="$SERIAL"` and `adb -s "$SERIAL" ...`.
+- If it is absent/offline, start or reconnect it, or report the blocker; never silently choose another device.
+- Use `describe` output when the APK path is unknown.
+- Status alone is insufficient: some no-device/runtime errors exit 0, while `android help <command>` exits 1 after printing usage. Validate output/artifacts; prefer parent help when leaf help is rejected.
+- The CLI has no journey runner. Journey XML is an agent-evaluation protocol, not an `android` command.
 
 ## Decision heuristic
 
