@@ -9,7 +9,7 @@
   ],
   "share": "manual",
   "permission": {
-    "task": "allow",
+    "task": "deny",
     "read": "allow",
     "external_directory": "allow"
   },
@@ -61,7 +61,8 @@
     },
     "orchestrator": {
       "permission" : {
-        "edit": "deny"
+        "edit": "deny",
+        "task": "allow"
       }
     }
   },

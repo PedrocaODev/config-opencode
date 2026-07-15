@@ -1,6 +1,6 @@
 {
   "$schema": "https://unpkg.com/oh-my-opencode-slim@latest/oh-my-opencode-slim.schema.json",
-  "preset": "first",
+  "preset": "second",
   "disabled_agents": [
     "build",
     "designer"
@@ -64,7 +64,8 @@
       },
       "fixer": {
         "model": "openai/gpt-5.6-luna",
-        "variant": "high",
+        "variant": "low",
+        "temperature": 0.1,
         "skills": [
           "ponytail"
         ],
@@ -80,8 +81,8 @@
     },
     "second": {
       "orchestrator": {
-        "model": "openai/gpt-5.5",
-        "variant": "medium",
+        "model": "openai/gpt-5.6-sol",
+        "variant": "low",
         "skills": [
           "clonedeps",
           "codemap",
@@ -91,7 +92,7 @@
         "mcps": []
       },
       "oracle": {
-        "model": "openai/gpt-5.5",
+        "model": "openai/gpt-5.6-sol",
         "variant": "xhigh",
         "skills": [
           "simplify",
@@ -120,7 +121,7 @@
         ]
       },
       "explorer": {
-        "model": "openai/gpt-5.4-mini",
+        "model": "openai/gpt-5.6-luna",
         "variant": "low",
         "skills": [],
         "mcps": [
@@ -134,7 +135,7 @@
         "mcps": []
       },
       "fixer": {
-        "model": "openai/gpt-5.4-mini",
+        "model": "openai/gpt-5.6-sol",
         "variant": "low",
         "skills": [],
         "mcps": []
