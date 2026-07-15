@@ -8,8 +8,8 @@
   "presets": {
     "first": {
       "orchestrator": {
-        "model": "opencode-go/deepseek-v4-pro",
-        "variant": "max",
+        "model": "openai/gpt-5.6-luna",
+        "variant": "high",
         "skills": [
           "clonedeps",
           "codemap",
@@ -20,7 +20,7 @@
       },
       "oracle": {
         "model": "openai/gpt-5.6-sol",
-        "variant": "xhigh",
+        "variant": "medium",
         "skills": [
           "simplify",
           "ponytail",
@@ -42,7 +42,8 @@
         "mcps": []
       },
       "librarian": {
-        "model": "opencode-go/mimo-v2.5",
+        "model": "openai/gpt-5.6-luna",
+        "variant": "low",
         "temperature": 0.1,
         "skills": [],
         "mcps": [
@@ -53,14 +54,16 @@
         ]
       },
       "explorer": {
-        "model": "openai/gpt-5.4-mini",
+        "model": "openai/gpt-5.6-luna",
+        "variant": "low",
+        "temperature": 0.1,
         "skills": [],
         "mcps": [
-          "codebase-memory"
+          "graphify"
         ]
       },
       "fixer": {
-        "model": "openai/gpt-5.4-mini",
+        "model": "openai/gpt-5.6-luna",
         "variant": "high",
         "skills": [
           "ponytail"
@@ -68,7 +71,9 @@
         "mcps": []
       },
       "observer": {
-        "model": "openai/gpt-5.4-mini",
+        "model": "openai/gpt-5.6-luna",
+        "variant": "low",
+        "temperature": 0.1,
         "skills": [],
         "mcps": []
       }

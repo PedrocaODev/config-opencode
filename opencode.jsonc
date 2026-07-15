@@ -42,8 +42,8 @@
   },
   "agent": {
     "plan": {
-      "model": "openai/gpt-5.6-terra",
-      "variant": "xhigh",
+      "model": "openai/gpt-5.6-sol",
+      "variant": "medium",
       "permission": {
         "edit": "deny",
         "bash": "allow",
@@ -51,8 +51,8 @@
       }
     },
     "build": {
-      "model": "openai/gpt-5.6-terra",
-      "variant": "low",
+      "model": "openai/gpt-5.6-luna",
+      "variant": "high",
       "permission": {
         "subtask": "deny",
         "edit": "allow",
