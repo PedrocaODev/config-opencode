@@ -19,3 +19,9 @@ node_modules/
 # oh-my-opencode-slim auto-generated
 .oh-my-opencode-slim/skills-manifest.json
 .oh-my-opencode-slim/skill-updates/
+
+# auto-updated by oh-my-opencode-slim
+skills/clonedeps/
+skills/codemap/
+skills/deepwork/
+skills/simplify/
