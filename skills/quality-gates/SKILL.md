@@ -1,6 +1,6 @@
 ---
 name: quality-gates
-description: Set up or tighten project git hooks and quality gates. Use when the user wants to add pre-commit hooks, pre-push checks, lint-on-save, typecheck guards, test gates, formatting enforcement, husky/lefthook/pre-commit/simple-git-hooks setup, or any automated validation that runs before commit or push. Front-loads: quality gates, git hooks, pre-commit, pre-push, lint, test, typecheck, green, formatting, validation, guard.
+description: "Set up or tighten project git hooks and quality gates. Use when the user wants to add pre-commit hooks, pre-push checks, lint-on-save, typecheck guards, test gates, formatting enforcement, husky/lefthook/pre-commit/simple-git-hooks setup, or any automated validation that runs before commit or push. Front-loads: quality gates, git hooks, pre-commit, pre-push, lint, test, typecheck, green, formatting, validation, guard."
 ---
 
 # Quality Gates
