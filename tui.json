@@ -1,6 +1,6 @@
 {
   "$schema": "https://opencode.ai/tui.json",
-  "theme": "opencode",
+  "theme": "wake-up-samurai",
   "keybinds": {
     "switch_agent": "shift+tab",
     "switch_mode": "tab",
