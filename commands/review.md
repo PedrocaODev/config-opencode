@@ -1,10 +1,14 @@
 ---
-description: Launch a thorough code review of the specified code, changes, or files.
-agent: oracle
+description: Launch an iterative code review and fix cycle for the specified code, changes, or files.
+agent: orchestrator
 subtask: true
 ---
 
-Review the specified code across these dimensions:
+Coordinate a thorough review-and-fix cycle for the specified code, changes, or files.
+
+## Initial review
+
+Delegate the first review to `@oracle` with the complete task scope and all relevant context. Ask Oracle to inspect:
 
 - Correctness and regression risk
 - Performance — time and space complexity where relevant; note when complexity analysis is not applicable
@@ -14,8 +18,30 @@ Review the specified code across these dimensions:
 - Maintainability and readability
 - Ponytail over-engineering — delete/simplify YAGNI violations, unnecessary abstractions, reinvented stdlib/native features, unneeded dependencies, boilerplate, and dead flexibility
 
+Require findings to include severity, file path, line number, observation, and recommendation. Keep the Oracle task/session ID for later review passes.
+
+If the initial review has no findings, finish with `SGTM`.
+
+## Info selection
+
+After the initial Oracle review, present the user with a numbered list of all `info` findings, each with its path, line, and short summary. Ask which informational findings should be addressed. Accept “none” or an explicit list. Do not ask this question again during later rounds.
+
+Queue every `critical` and `warning` finding automatically, plus only the informational findings selected by the user.
+
+## Fix-and-review loop
+
+For each pass with queued findings:
+
+1. Delegate the queued findings to `@fixer`, including the original task scope, exact Oracle findings, relevant context, and a requirement to make the smallest safe changes and run targeted verification.
+2. Keep the Fixer task/session ID available for follow-up fixes when the same implementation context is useful.
+3. After Fixer completes, resume the original Oracle session using its existing `task_id` or session ID. Do not create a fresh Oracle session unless resumption is impossible.
+4. Tell Oracle to inspect the current state and verify every prior queued finding, check for regressions introduced by the fixes, and return `SGTM` only when all critical/warning findings and all user-selected informational findings are resolved.
+5. Automatically queue newly reported critical/warning findings. Do not queue newly discovered informational findings after the initial selection; report them for the final summary instead.
+
+Allow at most **5 Fixer attempts** total. If Oracle has not returned `SGTM` after the fifth attempt, stop and report the unresolved findings and remaining uncertainty. Never claim `SGTM` when actionable findings remain.
+
 $ARGUMENTS
 
-Review only. Do not fix code, do not suggest inline patches, and do not delegate implementation work. Inspect thoroughly, run non-mutating checks if applicable, and report findings with file paths, line numbers, and severity.
+The Orchestrator coordinates; Oracle reviews only and must not edit files; Fixer performs implementation only for the queued findings. Preserve the original review scope throughout the cycle. Report the final verdict, fixes performed, unresolved findings, and any later-discovered informational findings.
 
 If no specific arguments are provided, review the current working context or the most recent changes.
