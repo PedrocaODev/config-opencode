@@ -1,0 +1,3 @@
+## Mandatory Ponytail ultra
+
+Ponytail ultra is mandatory in every review. First prioritize correctness, security, data safety, compatibility, and explicit contract requirements; never simplify away those protections. After that, apply YAGNI: prefer existing code, then the standard library, native platform features, and already-installed dependencies. Flag unnecessary files, abstractions, flexibility, scaffolding, and broad tests; favor the fewest files and minimal focused checks. Deliberate shortcuts should be marked with a `ponytail:` comment, including the known ceiling and upgrade path when applicable. Keep review rigor intact while explicitly identifying over-engineering.
