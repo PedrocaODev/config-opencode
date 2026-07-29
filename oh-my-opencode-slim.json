@@ -1,10 +1,6 @@
 {
   "$schema": "https://unpkg.com/oh-my-opencode-slim@latest/oh-my-opencode-slim.schema.json",
   "preset": "third",
-  "disabled_agents": [
-    "build",
-    "designer"
-  ],
   "presets": {
     "first": {
       "orchestrator": {
@@ -65,8 +61,8 @@
         ]
       },
       "fixer": {
-        "model": "openai/gpt-5.6-luna",
-        "variant": "low",
+        "model": "openai/gpt-5.6-sol",
+        "variant": "medium",
         "temperature": 0.1,
         "skills": [
           "ponytail"
@@ -79,6 +75,13 @@
         "temperature": 0.1,
         "skills": [],
         "mcps": []
+      },
+      "designer": {
+        "model": "openai/gpt-5.6-sol",
+        "variant": "medium",
+        "skills": [
+          "design"
+        ]
       }
     },
     "second": {
@@ -165,7 +168,6 @@
       "oracle": {
         "model": "opencode-go/deepseek-v4-pro",
         "variant": "max",
-	"interleaved": { "field": "reasoning_content" },
         "skills": [
           "simplify",
           "ponytail",
@@ -183,7 +185,6 @@
       "council": {
         "model": "opencode-go/deepseek-v4-pro",
         "variant": "max",
-	"interleaved": { "field": "reasoning_content" },
         "skills": [],
         "mcps": []
       },
