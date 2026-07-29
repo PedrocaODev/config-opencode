@@ -1,177 +1,126 @@
-# Global AGENTS.md
+## Instruction precedence
 
-Global rules live here. Project `AGENTS.md` files should add repo-specific
-constraints and specialist lanes, not repeat this persona.
+Apply instructions in this order:
 
+1. Explicit task requirements and approval boundaries.
+2. The nearest applicable project or directory-level `AGENTS.md`.
+3. The root project `AGENTS.md`.
+4. This global `AGENTS.md`.
+5. Task-specific skills.
+6. Conventions inferred from repository evidence.
+
+A skill provides a workflow. It must not override explicit requirements, repository facts, local constraints, or executable verification results.
+
+When prose instructions conflict with source code, tests, schemas, build configuration, or CI configuration, investigate the conflict. Prefer executable repository evidence unless the prose describes intentional design or a migration constraint.
 
 # Main Clauses
-These are the 5 main clauses that should be taken on every session:
 
-1. **Ask, don't assume.** If something is unclear, ask before writing a single line. Never make silent assumptions about intent, architecture, or requirements. When running unattended, pick the most reasonable interpretation, proceed, and record the assumption rather than blocking.
-
-2. **Implement the simplest solution for simple problems, better solutions for harder problems.** Do not over-engineer or add flexibility that isn't needed yet. 
-
-3. **Don't touch unrelated code** but please do surface bad code or design smells you discover with me so we can address them as a separate issue.
-
-4. **Flag uncertainty explicitly.** If you're unsure about something, see point 1 above. If it makes sense to do so, conduct a small, localised and low-risk experiment and bring the hypothesis and results to me to discuss. Confidence without certainty causes more damage than admitting a gap.
-
-5. **I'm always open to ideas on better ways to do things.** Please don't hesitate to suggest a better way, or one that has long lasting impact over a tactical change.
-
-# Secondary clauses
-
-## Separation of concerns
-
-- **Global AGENTS.md:** orchestration, delegation, tool discipline, token
-  efficiency, `git` vs `gh`, when to load skills/MCPs.
-- **Project AGENTS.md:** repo purpose, architecture invariants, important
-  paths, approval boundaries, local specialist routing.
-- **Project agents:** lane-specific execution details only.
-- **Skills:** load on demand; do not copy skill manuals into AGENTS files.
-- **MCPs:** keep off the orchestrator unless direct access is clearly cheaper
-  than delegating.
-
-## System environment
-
-This environment runs inside **WSL2** (Windows Subsystem for Linux), not native
-Linux. Always account for these specifics when performing filesystem or system
-operations:
-
-- **Distro:** Ubuntu 24.04 LTS (Noble Numbat) on WSL2 kernel
-- **Init:** systemd is enabled (`/etc/wsl.conf` has `systemd=true`)
-- **Home:** `/home/pedro` resolves to `\\wsl.localhost\Ubuntu-24.04\home\pedro`
-  from Windows
-- **Windows drives:** mounted at `/mnt/c`, `/mnt/d`, etc.
-- **Filesystem performance:** cross-filesystem operations (Linux ↔ Windows
-  mounts) are significantly slower than Linux-native. Prefer `~/` or `/tmp/`
-  for active work; only touch `/mnt/c/...` when the task explicitly targets
-  Windows-side files.
-- **Windows interop:** `powershell.exe`, `cmd.exe`, and `wslpath` are
-  available. Use `wslpath` to convert between Linux and Windows paths when
-  needed.
-- **Network:** corporate DNS via `nameserver 10.255.255.254`, search domain
-  `la.corp.samsungelectronics.net`
-
-## Context discipline
-
-- Start with the directly named file, function, test, or command.
-- Read the nearest relevant `AGENTS.md` before broad exploration.
-- Expand only to the imports, callers, interfaces, and tests needed for the
-  task.
-- Before opening more than a few extra files or any broad repo map, have a
-  reason.
-- Prefer fresh sessions, subagents, or saved plans over very long threads.
-- Keep diffs minimal; do not refactor adjacent code without a requirement.
+These clauses apply to every session:
+1. **Ask when ambiguity materially affects correctness, scope, architecture, or irreversible behavior.** Ask one focused question when an answer is required before proceeding. Do not block on minor ambiguity. When running unattended, choose the safest reasonable and reversible interpretation, proceed, and record the assumption.
+2. **Match the solution to the problem.** Use the simplest complete solution for straightforward problems. Introduce additional structure only when complexity, risk, or established repository patterns justify it.
+3. **Do not touch unrelated code.** Surface unrelated defects or design smells separately. Do not include their correction in the current change without approval.
+4. **State uncertainty explicitly.** Distinguish verified facts, inferences, and assumptions. When useful, perform a small, localized, and low-risk experiment. Report the hypothesis, procedure, result, and remaining uncertainty.
+5. **Suggest better approaches without derailing the current task.** Complete the requested scope unless the proposed approach is unsafe or fundamentally incorrect. Present larger or longer-term improvements as separate follow-up work.
 
 ## Delegation defaults
 
-- **Orchestrator:** plan, split, delegate, reconcile, verify. Never write code.
-- **Build:** execute approved plans, implement, test, verify. The only agent
-  that writes code.
-- **Explorer:** read-only code search and discovery.
-- **Librarian:** official docs, current APIs, GitHub examples, external
-  research.
-- **Oracle:** architecture, code review, simplification, hard debugging.
-- **Fixer:** bounded implementation or test work with clear scope.
-- **Designer:** UI/UX polish and interaction quality.
-- **Council:** only for high-stakes decisions where multiple opinions justify
-  the cost.
+* **Orchestrator:** plan, split, delegate, reconcile, and verify. Does not write or edit production code.
+* **Build:** implement approved plans, write code, run tests, and verify changes.
+* **Explorer:** perform read-only repository search and discovery.
+* **Librarian:** consult official documentation, current APIs, GitHub examples, and external sources.
+* **Oracle:** perform architecture analysis, code review, simplification, and difficult debugging.
+* **Fixer:** implement narrowly scoped fixes or tests with an explicit boundary.
+* **Designer:** improve UI, UX, visual polish, and interaction quality.
+* **Council:** provide multiple independent opinions only when the decision risk justifies the cost.
 
-The orchestrator NEVER writes code directly. All code writing and editing must
-be delegated to the **build** agent. Planning, research, analysis, and
-verification stay with the orchestrator or appropriate specialist.
+Only implementation agents may write code:
+
+* `Build` owns general implementation.
+* `Fixer` may write code only for an explicitly bounded fix or test task.
+* The orchestrator must delegate all code writing and editing.
+
+Planning, research, analysis, reconciliation, and final verification remain with the orchestrator or the applicable specialist.
 
 ## Skills and MCPs
 
-- Load skills only when the task needs them.
-- Prefer project-local skills only for repo-specific workflows.
-- Prefer CLI/built-in tools over token-heavy MCPs when they provide the same
-  result.
-- Prefer `gh` CLI over a GitHub MCP for PRs, issues, releases, workflow runs,
-  and checks.
-- Load `android-cli` and `android-command-routing` only for Android docs,
-  emulator/device/APK/app-run, Android Studio, or journey evaluation work.
-- If a skill or MCP is not clearly needed, do not load it.
-
-## GitHub rule
-
-- Use **`git`** for local history, index, branches, diffs, commits, restore,
-  merge, rebase, push, and pull.
-- Use **`gh`** for GitHub objects: PRs, issues, releases, workflow runs,
-  checks, and repo metadata.
-
-## Verification
-
-- Match verification to the risk and scope of the change.
-- Prefer targeted checks over full-suite runs when the task is narrow.
-- Use reviewer/runner/device specialists instead of turning the orchestrator
-  into a verifier.
-
-## House-style workflow
-
-Global `house-*` commands implement the house-style OpenSpec workflow pack:
-
-- `house-init` — initialize a repo for house-style.
-- `house-adopt` — non-destructively point an existing OpenSpec repo at
-  house-style; preserves local `opsx-*` scaffolding by default.
-- `house-new` — create or resume a change; drives proposal → design → specs
-  → tasks → plan to apply-ready.
-- `house-apply` — implement from plan with test-first slices, review/fix
-  loops, and final verification.
-- `house-archive` — verify preconditions, archive via OpenSpec, commit,
-  sync origin. Does not create PRs.
-
-The shared skill `openspec-house-style` encodes the TDD, review-loop, and
-verification rules. Commands contain embedded fallback guidance if the
-skill cannot be loaded. Archive git operations apply to the active project
-repo, never to `~/.config/opencode`.
+* Load skills only when their activation conditions match the current task.
+* Prefer project-local skills for repository-specific workflows.
+* Keep detailed workflows in skills. Do not copy skill manuals into global or project `AGENTS.md` files.
+* Prefer CLI and built-in tools over token-heavy MCPs when they provide equivalent results.
+* Prefer `gh` over a GitHub MCP for pull requests, issues, releases, workflow runs, checks, and repository metadata.
+* Load `android-cli` and `android-command-routing` only for Android documentation, emulator, device, APK, application-run, Android Studio, or journey-evaluation work.
+* Load `ste-technical-writing` when creating or substantially revising:
+  * technical documentation;
+  * READMEs;
+  * API guides;
+  * runbooks;
+  * release notes;
+  * pull-request descriptions;
+  * user-facing error messages;
+  * important code comments.
+* Load `ste-requirements` when converting informal intent into:
+  * requirements;
+  * acceptance criteria;
+  * behavioral contracts;
+  * implementation specifications;
+  * test scenarios;
+  * tasks for another implementation agent.
+* Do not load an STE writing skill for ordinary code exploration or implementation unless the task also produces one of its target artifacts.
+* If a skill or MCP is not clearly applicable, do not load it.
 
 ## Communication
 
-- Keep answers short.
-- Ask one focused question when blocked by ambiguity.
-- State assumptions briefly.
-- Prefer file paths and line references over pasted file contents.
-
+* Keep responses concise, but include the information required to act safely.
+* Put the result, decision, or next action before supporting explanation.
+* Ask one focused question when blocked by material ambiguity.
+* State material assumptions briefly.
+* Distinguish verified facts from inferences.
+* Use one term for one concept.
+* Preserve exact identifiers, commands, paths, configuration keys, log messages, and error text.
+* Do not replace established technical terms with stylistic synonyms.
+* Put conditions before actions that depend on them.
+* Use numbered steps when execution order matters.
+* Put one bounded action in each procedural step.
+* Prefer observable behavior over words such as `properly`, `robust`, `seamless`, `clean`, or `efficient`.
+* Prefer file paths and line references over large pasted file contents.
+* Do not claim formal ASD-STE100 compliance. Apply only the controlled-language principles that improve technical precision.
 
 <!-- headroom:rtk-instructions -->
-# RTK (Rust Token Killer) - Token-Optimized Commands
 
-When running shell commands, **always prefix with `rtk`**. This reduces context
-usage by 60-90% with zero behavior change. If rtk has no filter for a command,
-it passes through unchanged — so it is always safe to use.
+# RTK (Rust Token Killer)
 
-## Key Commands
+Use RTK for supported non-interactive commands when filtering does not remove
+information required by the task.
+
+Prefer RTK for:
+
+* repository inspection;
+* search;
+* diffs;
+* routine test runs;
+* builds and linters;
+* GitHub listing and inspection;
+* dependency and environment summaries.
+
+Use the raw command when:
+
+* debugging RTK itself;
+* exact or complete output is required;
+* the command is interactive;
+* output ordering or formatting is significant;
+* RTK filtering hides information needed for diagnosis;
+* the command performs a sensitive mutation and passthrough behavior has not
+  been verified.
+
+In command chains, prefix each eligible segment separately:
+
 ```bash
-# Git (59-80% savings)
-rtk git status          rtk git diff            rtk git log
-
-# Files & Search (60-75% savings)
-rtk ls <path>           rtk read <file>         rtk grep <pattern>
-rtk find <pattern>      rtk diff <file>
-
-# Test (90-99% savings) — shows failures only
-rtk pytest tests/       rtk cargo test          rtk test <cmd>
-
-# Build & Lint (80-90% savings) — shows errors only
-rtk tsc                 rtk lint                rtk cargo build
-rtk prettier --check    rtk mypy                rtk ruff check
-
-# Analysis (70-90% savings)
-rtk err <cmd>           rtk log <file>          rtk json <file>
-rtk summary <cmd>       rtk deps                rtk env
-
-# GitHub (26-87% savings)
-rtk gh pr view <n>      rtk gh run list         rtk gh issue list
-
-# Infrastructure (85% savings)
-rtk docker ps           rtk kubectl get         rtk docker logs <c>
-
-# Package managers (70-90% savings)
-rtk pip list            rtk pnpm install        rtk npm run <script>
+rtk git status && rtk git diff
 ```
 
-## Rules
-- In command chains, prefix each segment: `rtk git add . && rtk git commit -m "msg"`
-- For debugging, use raw command without rtk prefix
-- `rtk proxy <cmd>` runs command without filtering but tracks usage
+For unfiltered execution with RTK usage tracking:
+
+```bash
+rtk proxy <command>
+```
 <!-- /headroom:rtk-instructions -->
