@@ -1,11 +1,6 @@
 {
   "$schema": "https://unpkg.com/oh-my-opencode-slim@latest/oh-my-opencode-slim.schema.json",
-  "preset": "first",
-  "multiplexer": {
-    "type": "auto",
-    "layout": "main-vertical",
-    "main_pane_size": 60
-  },
+  "preset": "third",
   "presets": {
     "first": {
       "orchestrator": {
@@ -160,7 +155,7 @@
     },
     "third": {
       "orchestrator": {
-        "model": "opencode-go/mimo-v2.5",
+        "model": "opencode-go/mimo-v2.5-pro",
         "variant": "high",
         "skills": [
           "clonedeps",
@@ -171,8 +166,9 @@
         "mcps": []
       },
       "oracle": {
-        "model": "opencode-go/glm-5.2",
+        "model": "opencode-go/deepseek-v4-pro",
         "variant": "max",
+	"interleaved": { "field": "reasoning_content" },
         "skills": [
           "simplify",
           "ponytail",
@@ -184,17 +180,19 @@
           "*"
         ],
         "mcps": [
-          "codebase-memory"
+          "graphify"
         ]
       },
       "council": {
-        "model": "opencode-go/kimi-k2.6",
-        "variant": "high",
+        "model": "opencode-go/deepseek-v4-pro",
+        "variant": "max",
+	"interleaved": { "field": "reasoning_content" },
         "skills": [],
         "mcps": []
       },
       "librarian": {
         "model": "opencode-go/mimo-v2.5",
+        "variant": "low",
         "temperature": 0.1,
         "skills": [],
         "mcps": [
@@ -206,9 +204,11 @@
       },
       "explorer": {
         "model": "opencode-go/mimo-v2.5",
+        "variant": "low",
+        "temperature": 0.1,
         "skills": [],
         "mcps": [
-          "codebase-memory"
+          "graphify"
         ]
       },
       "designer": {
@@ -218,13 +218,13 @@
         "mcps": []
       },
       "fixer": {
-        "model": "opencode-go/mimo-v2.5",
+        "model": "opencode-go/mimo-v2.5-pro",
         "variant": "max",
         "skills": [],
         "mcps": []
       },
       "observer": {
-        "model": "opencode-go/mimo-v2.5",
+        "model": "opencode-go/kimi-k2.6",
         "skills": [],
         "mcps": []
       }
