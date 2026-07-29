@@ -2,10 +2,10 @@
   "$schema": "https://opencode.ai/config.json",
   "autoupdate": "notify",
   "plugin": [
-    "oh-my-opencode-slim",
     "@cortexkit/opencode-magic-context@latest",
     "@dietrichgebert/ponytail",
-    "opencode-skills"
+    "opencode-skills",
+    "oh-my-opencode-slim"
   ],
   "share": "manual",
   "permission": {
@@ -29,6 +29,11 @@
       "type": "local",
       "command": ["/home/pedro/.local/bin/graphify-mcp", "graphify-out/graph.json"],
       "enabled": true
+    },
+    "camoufox": {
+      "type": "local",
+      "command": ["npx", "-y", "camoufox-mcp-server@latest"],
+      "enabled": true
     }
   },
   "provider": {
@@ -38,7 +43,7 @@
       "options": {
         "baseURL": "http://127.0.0.1:8787/v1"
       }
-    },
+    }
   },
   "agent": {
     "plan": {
@@ -51,10 +56,10 @@
       }
     },
     "build": {
-      "model": "openai/gpt-5.6-luna",
-      "variant": "high",
+      "mode": "primary",
+      "model": "openai/gpt-5.6-sol",
+      "variant": "medium",
       "permission": {
-        "subtask": "deny",
         "edit": "allow",
         "task": "deny"
       }
