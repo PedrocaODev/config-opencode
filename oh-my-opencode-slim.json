@@ -168,7 +168,7 @@
       "oracle": {
         "model": "opencode-go/deepseek-v4-pro",
         "variant": "max",
-	"interleaved": { "field": "reasoning_content" },
+      	"interleaved": { "field": "reasoning_content" },
         "skills": [
           "simplify",
           "ponytail",
