@@ -1,6 +1,6 @@
 {
   "$schema": "https://unpkg.com/oh-my-opencode-slim@latest/oh-my-opencode-slim.schema.json",
-  "preset": "third",
+  "preset": "first",
   "presets": {
     "first": {
       "orchestrator": {
