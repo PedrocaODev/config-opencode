@@ -43,6 +43,14 @@
       "options": {
         "baseURL": "http://127.0.0.1:8787/v1"
       }
+    },
+    "omniroute": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "OmniRoute",
+      "options": {
+        "baseURL": "http://localhost:20128/v1",
+        "apiKey": "sk-4a5b8d9bc69edb37-5facda-5b1d76d1"
+      },
     }
   },
   "agent": {
