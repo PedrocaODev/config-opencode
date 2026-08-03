@@ -155,8 +155,9 @@
     },
     "third": {
       "orchestrator": {
-        "model": "opencode-go/mimo-v2.5-pro",
-        "variant": "high",
+        "model": "openai/gpt-5.6-luna",
+        "variant": "max",
+        "temperature": 1.0,
         "skills": [
           "clonedeps",
           "codemap",
@@ -166,8 +167,9 @@
         "mcps": []
       },
       "oracle": {
-        "model": "opencode-go/deepseek-v4-pro",
-        "variant": "max",
+        "model": "openai/gpt-5.6-sol",
+        "variant": "xhigh",
+        "temperature": 1.0,
         "skills": [
           "simplify",
           "ponytail",
@@ -183,13 +185,14 @@
         ]
       },
       "council": {
-        "model": "opencode-go/deepseek-v4-pro",
+        "model": "openai/gpt-5.6-sol",
         "variant": "max",
+        "temperature": 1.0,
         "skills": [],
         "mcps": []
       },
       "librarian": {
-        "model": "opencode-go/mimo-v2.5",
+        "model": "opencode-go/deepseek-v4-flash",
         "variant": "low",
         "temperature": 0.1,
         "skills": [],
@@ -201,7 +204,7 @@
         ]
       },
       "explorer": {
-        "model": "opencode-go/mimo-v2.5",
+        "model": "opencode-go/deepseek-v4-flash",
         "variant": "low",
         "temperature": 0.1,
         "skills": [],
@@ -216,8 +219,9 @@
         "mcps": []
       },
       "fixer": {
-        "model": "opencode-go/mimo-v2.5-pro",
-        "variant": "max",
+        "model": "opencode-go/deepseek-v4-flash",
+        "variant": "low",
+        "temperature": 0.1,
         "skills": [],
         "mcps": []
       },
@@ -233,15 +237,15 @@
     "presets": {
       "balanced": {
         "alpha": {
-          "model": "openai/gpt-5.5",
-          "variant": "xhigh"
+          "model": "opencode-go/kimi-k3",
+          "variant": "max"
         },
         "beta": {
-          "model": "openai/gpt-5.5",
-          "variant": "xhigh"
+          "model": "openai/gpt-5.6-sol",
+          "variant": "max"
         },
         "gamma": {
-          "model": "openai/gpt-5.5",
+          "model": "openai/gpt-5.6-sol",
           "variant": "xhigh"
         }
       }
