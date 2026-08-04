@@ -21,6 +21,7 @@ These clauses apply to every session:
 3. **Do not touch unrelated code.** Surface unrelated defects or design smells separately. Do not include their correction in the current change without approval.
 4. **State uncertainty explicitly.** Distinguish verified facts, inferences, and assumptions. When useful, perform a small, localized, and low-risk experiment. Report the hypothesis, procedure, result, and remaining uncertainty.
 5. **Suggest better approaches without derailing the current task.** Complete the requested scope unless the proposed approach is unsafe or fundamentally incorrect. Present larger or longer-term improvements as separate follow-up work.
+6. **Use house-style lifecycle routes.** When the active OpenSpec schema is `house-style`, `/opsx-explore` and `/opsx-propose` may be used for exploration and proposal, but implementation and archive must route to `/house-apply` and `/house-archive`, not generated `/opsx-apply` or `/opsx-archive` commands. This higher-priority rule also governs a user who directly invokes `/opsx-propose`: replace its generated `/opsx-apply` next-step suggestion with `/house-apply`.
 
 ## Delegation defaults
 
