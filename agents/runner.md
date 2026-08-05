@@ -1,7 +1,7 @@
 ---
 description: Runs and diagnoses repository-defined tests, builds, lint, validation, inspection, and configuration checks without editing source or preparing the environment.
 mode: subagent
-model: opencode-go/deepseek-v4-flash
+model: opencode-omniroute/opencode-go/deepseek-v4-flash
 variant: low
 temperature: 0.1
 permission:
