@@ -1,7 +1,7 @@
 ---
 description: Owns git staging, commits, branches, pushes, PR creation, CI watch, and merge-on-green when explicitly approved.
 mode: subagent
-model: openai/gpt-5.4
+model: opencode-omniroute/opencode-go/mimo-v2.5
 variant: xhigh
 temperature: 0.1
 permission:

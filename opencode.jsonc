@@ -5,7 +5,8 @@
     "@cortexkit/opencode-magic-context@0.33.1",
     "@dietrichgebert/ponytail",
     "opencode-skills",
-    "oh-my-opencode-slim"
+    "oh-my-opencode-slim",
+    ["@omniroute/opencode-plugin", { "baseURL": "http://localhost:20128", "autoSyncIntervalMs": 0, "features": { "combos": false, "autoCombos": false, "enrichment": false, "logLevel": "error" } }]
   ],
   "share": "manual",
   "permission": {
@@ -43,19 +44,11 @@
       "options": {
         "baseURL": "http://127.0.0.1:8787/v1"
       }
-    },
-    "omniroute": {
-      "npm": "@ai-sdk/openai-compatible",
-      "name": "OmniRoute",
-      "options": {
-        "baseURL": "http://localhost:20128/v1",
-        "apiKey": "sk-4a5b8d9bc69edb37-5facda-5b1d76d1"
-      },
     }
   },
   "agent": {
     "plan": {
-      "model": "openai/gpt-5.6-sol",
+      "model": "opencode-omniroute/codex/gpt-5.6-sol",
       "variant": "medium",
       "permission": {
         "edit": "deny",
@@ -65,7 +58,7 @@
     },
     "build": {
       "mode": "primary",
-      "model": "openai/gpt-5.6-sol",
+      "model": "opencode-omniroute/codex/gpt-5.6-sol",
       "variant": "medium",
       "permission": {
         "edit": "allow",

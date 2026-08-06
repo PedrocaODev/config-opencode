@@ -4,7 +4,7 @@
   "presets": {
     "first": {
       "orchestrator": {
-        "model": "openai/gpt-5.6-luna",
+        "model": "opencode-omniroute/codex/gpt-5.6-luna",
         "variant": "high",
         "skills": [
           "clonedeps",
@@ -16,7 +16,7 @@
         "mcps": []
       },
       "oracle": {
-        "model": "openai/gpt-5.6-sol",
+        "model": "opencode-omniroute/codex/gpt-5.6-sol",
         "variant": "medium",
         "skills": [
           "simplify",
@@ -34,13 +34,13 @@
         ]
       },
       "council": {
-        "model": "openai/gpt-5.6-sol",
+        "model": "opencode-omniroute/codex/gpt-5.6-sol",
         "variant": "medium",
         "skills": [],
         "mcps": []
       },
       "librarian": {
-        "model": "openai/gpt-5.6-luna",
+        "model": "opencode-omniroute/codex/gpt-5.6-luna",
         "variant": "low",
         "temperature": 0.1,
         "skills": [],
@@ -52,7 +52,7 @@
         ]
       },
       "explorer": {
-        "model": "openai/gpt-5.6-luna",
+        "model": "opencode-omniroute/codex/gpt-5.6-luna",
         "variant": "low",
         "temperature": 0.1,
         "skills": [],
@@ -61,7 +61,7 @@
         ]
       },
       "fixer": {
-        "model": "openai/gpt-5.6-sol",
+        "model": "opencode-omniroute/codex/gpt-5.6-sol",
         "variant": "medium",
         "temperature": 0.1,
         "skills": [
@@ -70,14 +70,14 @@
         "mcps": []
       },
       "observer": {
-        "model": "openai/gpt-5.6-luna",
+        "model": "opencode-omniroute/codex/gpt-5.6-luna",
         "variant": "low",
         "temperature": 0.1,
         "skills": [],
         "mcps": []
       },
       "designer": {
-        "model": "openai/gpt-5.6-sol",
+        "model": "opencode-omniroute/codex/gpt-5.6-sol",
         "variant": "medium",
         "skills": [
           "design"
@@ -86,7 +86,7 @@
     },
     "second": {
       "orchestrator": {
-        "model": "openai/gpt-5.6-sol",
+        "model": "opencode-omniroute/codex/gpt-5.6-sol",
         "variant": "low",
         "skills": [
           "clonedeps",
@@ -98,7 +98,7 @@
         "mcps": []
       },
       "oracle": {
-        "model": "openai/gpt-5.6-sol",
+        "model": "opencode-omniroute/codex/gpt-5.6-sol",
         "variant": "xhigh",
         "skills": [
           "simplify",
@@ -116,7 +116,7 @@
         ]
       },
       "librarian": {
-        "model": "openai/gpt-5.6-luna",
+        "model": "opencode-omniroute/codex/gpt-5.6-luna",
         "temperature": 0.1,
         "variant": "low",
         "skills": [],
@@ -128,7 +128,7 @@
         ]
       },
       "explorer": {
-        "model": "openai/gpt-5.6-luna",
+        "model": "opencode-omniroute/codex/gpt-5.6-luna",
         "temperature": 0.1,
         "variant": "low",
         "skills": [],
@@ -137,14 +137,14 @@
         ]
       },
       "designer": {
-        "model": "openai/gpt-5.6-luna",
+        "model": "opencode-omniroute/codex/gpt-5.6-luna",
         "temperature": 0.1,
         "variant": "low",
         "skills": [],
         "mcps": []
       },
       "fixer": {
-        "model": "openai/gpt-5.6-luna",
+        "model": "opencode-omniroute/codex/gpt-5.6-luna",
         "temperature": 0.1,
         "variant": "high",
         "skills": [
@@ -155,7 +155,7 @@
     },
     "third": {
       "orchestrator": {
-        "model": "opencode-go/deepseek-v4-flash",
+        "model": "opencode-omniroute/opencode-go/deepseek-v4-flash",
         "variant": "max",
         "temperature": 1,
         "skills": [
@@ -167,7 +167,7 @@
         ]
       },
       "oracle": {
-        "model": "openai/gpt-5.6-sol",
+        "model": "opencode-omniroute/codex/gpt-5.6-sol",
         "variant": "xhigh",
         "temperature": 1,
         "skills": [
@@ -185,14 +185,14 @@
         ]
       },
       "council": {
-        "model": "openai/gpt-5.6-sol",
+        "model": "opencode-omniroute/codex/gpt-5.6-sol",
         "variant": "max",
         "temperature": 1,
         "skills": [],
         "mcps": []
       },
       "librarian": {
-        "model": "opencode-go/deepseek-v4-flash",
+        "model": "opencode-omniroute/opencode-go/deepseek-v4-flash",
         "variant": "low",
         "temperature": 0.1,
         "skills": [],
@@ -204,7 +204,7 @@
         ]
       },
       "explorer": {
-        "model": "opencode-go/deepseek-v4-flash",
+        "model": "opencode-omniroute/opencode-go/deepseek-v4-flash",
         "variant": "low",
         "temperature": 0.1,
         "skills": [],
@@ -213,13 +213,13 @@
         ]
       },
       "designer": {
-        "model": "opencode-go/kimi-k2.6",
+        "model": "opencode-omniroute/opencode-go/kimi-k2.6",
         "variant": "medium",
         "skills": [],
         "mcps": []
       },
       "fixer": {
-        "model": "opencode-go/deepseek-v4-flash",
+        "model": "opencode-omniroute/opencode-go/deepseek-v4-flash",
         "variant": "low",
         "temperature": 0.1,
         "skills": [
@@ -230,7 +230,7 @@
         ]
       },
       "observer": {
-        "model": "opencode-go/kimi-k2.6",
+        "model": "opencode-omniroute/opencode-go/kimi-k2.6",
         "skills": [],
         "mcps": []
       }
@@ -241,15 +241,15 @@
     "presets": {
       "balanced": {
         "alpha": {
-          "model": "opencode-go/kimi-k3",
+          "model": "opencode-omniroute/opencode-go/kimi-k3",
           "variant": "max"
         },
         "beta": {
-          "model": "openai/gpt-5.6-sol",
+          "model": "opencode-omniroute/codex/gpt-5.6-sol",
           "variant": "max"
         },
         "gamma": {
-          "model": "openai/gpt-5.6-sol",
+          "model": "opencode-omniroute/codex/gpt-5.6-sol",
           "variant": "xhigh"
         }
       }
